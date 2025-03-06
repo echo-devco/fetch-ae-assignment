@@ -102,10 +102,10 @@ brand_receipts_recent_users answers the following questions:
     - answered by [top_brand_by_spend](analyses/top_brand_by_spend.sql)
 
 ## Data Quality
-**Key Observations**
-    - Approximately 14% (70) users appear to be duplicate entries.  
-    - Around 8% (552) of receipt transaction brand barcode values are missing in the brand data source.  
-    - The overall volume of user signups and receipt transactions are recored in 2021. 
+**Key Observations**  
+- Approximately 14% (70) users appear to be duplicate entries.  
+- Around 8% (552) of receipt transaction brand barcode values are missing in the brand data source.  
+- The overall volume of user signups and receipt transactions are recored in 2021. 
 
 [Data Quality Analysis Notebook](_data_quality.ipynb)
 
