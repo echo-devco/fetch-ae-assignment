@@ -18,6 +18,7 @@ inner join int_users u
     on i.userId = u.userId
 left join stg_brands b
     on i.barcode  = b.barcode
-where date_add(u.createdDate, interval 4 years) >= ((current_date-1) - (interval 6 month))
+where --adding 4 years to signup date under the assumption the dates are recorded incorrectly
+    date_add(u.createdDate, interval 4 years) >= ((current_date-1) - (interval 6 month))
 group by all
 ;
