@@ -9,6 +9,7 @@ with rank_cte as (
         receiptCount,
         dense_rank() over (order by receiptCount desc) as brandReceiptRank
     from brand_receipts_recent_users
+    where barcode is not null
 )
 
 select
