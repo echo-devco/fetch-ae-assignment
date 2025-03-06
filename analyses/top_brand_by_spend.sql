@@ -9,6 +9,7 @@ with rank_cte as (
         totalSpent,
         dense_rank() over (order by totalSpent desc) as brandSpendRank
     from brand_receipts_recent_users
+    where barcode is not null
 )
 
 select
@@ -21,10 +22,10 @@ where brandSpendRank = 1
 ;
 
 /*
-┌───────────┬─────────┬───────────────┬────────────────┐
-│ brandName │ barcode │  totalSpent   │ brandSpendRank │
-│  varchar  │ varchar │ decimal(38,2) │     int64      │
-├───────────┼─────────┼───────────────┼────────────────┤
-│ NULL      │ NULL    │   10293.96    │       1        │
-└───────────┴─────────┴───────────────┴────────────────┘
+┌───────────┬──────────────┬───────────────┬────────────────┐
+│ brandName │   barcode    │  totalSpent   │ brandSpendRank │
+│  varchar  │   varchar    │ decimal(38,2) │     int64      │
+├───────────┼──────────────┼───────────────┼────────────────┤
+│ NULL      │ 036000320893 │    1931.92    │       1        │
+└───────────┴──────────────┴───────────────┴────────────────┘
 */
